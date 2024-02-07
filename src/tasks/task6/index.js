@@ -13,3 +13,9 @@ function flat(arr, depth = 1) {
 }
 
 
+function flat(arr, depth = 1) {
+    while(arr.some(Array.isArray) && depth-- > 0){
+        arr = [].concat(...arr);
+    }
+    return arr;
+}
